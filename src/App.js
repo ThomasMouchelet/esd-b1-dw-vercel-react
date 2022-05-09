@@ -6,14 +6,14 @@ function App() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    console.log(`${process.env.REACT_APP_API_URL}/users`)
+    
     fetch(`${process.env.REACT_APP_API_URL}/users`)
     .then(response => response.json())
     .then(data => {
       console.log(data);
       setUsers(data)
     })
-  })
+  }, [])
 
   return (
     <div className="App">
